@@ -5,6 +5,8 @@ Great for testing quick HTML code.
 
 A simple web server for the current working directory.  Used for hello world style web sites hosting only files in current directory structure.
 
+Watches directory structure and restarts server on file changes.  
+
 
 Installation
 ------------

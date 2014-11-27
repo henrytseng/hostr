@@ -1,6 +1,6 @@
 {
   "name": "hostr",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A simple web server for the current working directory.  Used for hello world style web sites hosting only files in current directory structure.",
   "repository": {
     "type": "git",
