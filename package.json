@@ -1,0 +1,14 @@
+{
+  "name": "hostr",
+  "version": "1.0.0",
+  "description": "A simple web server for the current working directory.  Used for hello world style web sites hosting only files in current directory structure.",
+  "scripts": {
+    "main": "bin/hostr",
+    "test": "ls"
+  },
+  "author": "Henry Tseng <contact@henrytseng.com> (http://www.henrytseng.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.10.4"
+  }
+}
