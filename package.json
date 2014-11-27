@@ -16,6 +16,8 @@
   "author": "Henry Tseng <contact@henrytseng.com> (http://www.henrytseng.com/)",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.10.4"
+    "colors": "^1.0.3",
+    "express": "^4.10.4",
+    "lodash": "^2.4.1"
   }
 }
