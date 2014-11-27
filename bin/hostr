@@ -39,7 +39,7 @@ function _watch(src) {
   // Restart
   fs.watch(src, function(action, filename) {
     if(!filename.match(/^\./)) {
-      console.log(('Changed '+src.substr(process.cwd().length)+path.sep+filename).blue);
+      console.log(('Changed '+src.substr(process.cwd().length+1)+path.sep+filename).blue);
       bootServer();
     }
   });
