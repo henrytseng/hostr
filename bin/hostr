@@ -10,7 +10,7 @@ var server;
 
 // Internal method to start server, throttled to 1 sec
 var _startServer = _.debounce(function() {
-  server = fork('../lib/server.js');
+  server = fork(__dirname+'/../lib/server.js');
 }, 1000);
 
 // Boot service
