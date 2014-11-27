@@ -9,21 +9,21 @@ A simple web server for the current working directory.  Used for hello world sty
 Installation
 ------------
 
-Run
+Run the following
 
-  mkdir ~/bin
-  cd ~/bin
-  npm install express 
+	npm install hostr -g
 
-Copy the file to a convenient location such as your home folder.  For example,
-
-  ~/bin/hostr
-
-Optionally, add the ~/bin folder to your PATH in `.profile` or `.bashrc`
-
-Run
+Use
 ---
 
-Usage: bin/hostr
+Run the following command to host the current working directory
 
-  ~/bin/hostr
+	hostr
+	
+A simple web server will be hosted at 
+
+	http://localhost:3000
+
+To host at a different port use the command
+
+	PORT=8080 hostr
