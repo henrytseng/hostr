@@ -41,7 +41,7 @@ LiveReload is used for development.  Hostr monitors your files.  When a file sav
 
 Communication between Hostr and LiveReload occur through WebSockets.  You must use a WebSocket enabled browser.  
 
-To use LiveReload: 
+To use LiveReload ([additional instructions](http://feedback.livereload.com/knowledgebase/articles/86180-how-do-i-add-the-script-tag-manually-)): 
 
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
