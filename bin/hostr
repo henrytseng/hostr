@@ -47,10 +47,9 @@ process.on('SIGINT', _shutdown);
 // Internal method to start server, throttled to 1 sec
 var _startServer = _.debounce(function(onReady) {
   server = fork(__dirname+'/../lib/server.js', {
-    env: {
-      QUIET: program.quiet || typeof program.quiet!=='undefined',
-      PORT: process.env.PORT
-    }
+    env: _.extend(process.env, {
+      QUIET: program.quiet || typeof program.quiet!=='undefined'
+    })
   });
   if(onReady) server.on('message', onReady);
 }, 1000);
