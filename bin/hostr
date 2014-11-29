@@ -4,20 +4,38 @@ var fork = require('child_process').fork;
 var fs = require('fs');
 var path = require('path');
 
+var program = require('commander');
 var colors = require('colors');
 var _ = require('lodash');
-var tinylr = require('tiny-lr');
+var pkg = require(__dirname+'/../package.json');
 
 // Server
 var server;
 
+// Commandline Interface
+program
+  .version(pkg.version)
+  .option('-l, --disablelivereload', 'Disables LiveReload automatic browser refresh')
+  .option('-q, --quiet', 'Quiet mode')
+  .parse(process.argv);
+
 // Start livereload
-var srvlr = tinylr();
-srvlr.listen(35729);
+var tinylr = require('tiny-lr');
+if(!program['disablelivereload']) {
+  var srvlr = tinylr();
+  srvlr.listen(35729);
+}
+
+// Debugging
+function _log(msg) {
+  if(!program.quiet) {
+    console.log(msg);
+  }
+}
 
 // Shutdown
 function _shutdown() {
-  srvlr.close();
+  if(srvlr) srvlr.close();
   if(server) server.kill('SIGKILL');
   process.exit();
 }
@@ -28,7 +46,12 @@ process.on('SIGINT', _shutdown);
 
 // Internal method to start server, throttled to 1 sec
 var _startServer = _.debounce(function(onReady) {
-  server = fork(__dirname+'/../lib/server.js');
+  server = fork(__dirname+'/../lib/server.js', {
+    env: {
+      QUIET: program.quiet || typeof program.quiet!=='undefined',
+      PORT: process.env.PORT
+    }
+  });
   if(onReady) server.on('message', onReady);
 }, 1000);
 
@@ -41,12 +64,10 @@ function _watch(src) {
   fs.watch(src, function(action, changedSrc) {
     if(!changedSrc.match(/^\./)) {
       var relativeSrc = (src.substr(process.cwd().length)+path.sep+changedSrc).substr(1);
-      console.log(('Changed '+relativeSrc).blue);
+      _log(('Changed '+relativeSrc).blue);
       
       var onReady = function(response) {
         if(response.status === 'ready') {
-          console.log(response.status, relativeSrc);
-
           tinylr.changed(changedSrc);
         }
       };
