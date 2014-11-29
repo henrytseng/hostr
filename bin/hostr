@@ -6,30 +6,31 @@ var path = require('path');
 
 var colors = require('colors');
 var _ = require('lodash');
+var tinylr = require('tiny-lr');
+
+// Server
 var server;
 
-// Internal method to start server, throttled to 1 sec
-var _startServer = _.debounce(function() {
-  server = fork(__dirname+'/../lib/server.js');
-}, 1000);
+// Start livereload
+var srvlr = tinylr();
+srvlr.listen(35729);
 
-// Boot service
-function bootServer() {
-  if(server) {
-    server.kill('SIGKILL');
-    server.once('close', function() {
-      _startServer();
-    });
-    server.once('error', function(e) {
-      console.log('Encountered error');
-      console.log(e.stack || e);
-      process.exit(2);
-    });
-    return;
-  }
-
-  _startServer();
+// Shutdown
+function _shutdown() {
+  srvlr.close();
+  if(server) server.kill('SIGKILL');
+  process.exit();
 }
+
+// Exception
+process.on('SIGTERM', _shutdown);
+process.on('SIGINT', _shutdown);
+
+// Internal method to start server, throttled to 1 sec
+var _startServer = _.debounce(function(onReady) {
+  server = fork(__dirname+'/../lib/server.js');
+  if(onReady) server.on('message', onReady);
+}, 1000);
 
 // Internal watch asset folder
 var watchedFolders = [];
@@ -37,10 +38,32 @@ function _watch(src) {
   watchedFolders.push(src);
 
   // Restart
-  fs.watch(src, function(action, filename) {
-    if(!filename.match(/^\./)) {
-      console.log(('Changed '+src.substr(process.cwd().length+1)+path.sep+filename).blue);
-      bootServer();
+  fs.watch(src, function(action, changedSrc) {
+    if(!changedSrc.match(/^\./)) {
+      var relativeSrc = (src.substr(process.cwd().length)+path.sep+changedSrc).substr(1);
+      console.log(('Changed '+relativeSrc).blue);
+      
+      var onReady = function(response) {
+        if(response.status === 'ready') {
+          console.log(response.status, relativeSrc);
+
+          tinylr.changed(changedSrc);
+        }
+      };
+      if(server) {
+        server.kill('SIGKILL');
+        server.once('close', function() {
+          _startServer(onReady);
+        });
+        server.once('error', function(e) {
+          console.log('Encountered error');
+          console.log(e.stack || e);
+          process.exit(2);
+        });
+        return;
+      }
+
+      _startServer(onReady);
     }
   });
 }
