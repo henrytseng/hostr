@@ -51,6 +51,14 @@ Then run Hostr and when file changes are detected your browser will refresh.
 	hostr
 
 
+
+Contribute
+----------
+
+If you've got ideas on how to make hostr better create an issue and mark an enhancement in Github.  
+
+
+
 License
 -------
 
