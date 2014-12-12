@@ -1,7 +1,7 @@
 hostr
 =====
 
-[![Build Status](https://travis-ci.org/henrytseng/hostr.svg)](https://github.com/henrytseng/hostr)
+[![Build Status](https://travis-ci.org/henrytseng/hostr.svg?branch=master)](https://github.com/henrytseng/hostr)
 
 
 Great for testing quick HTML code.  
