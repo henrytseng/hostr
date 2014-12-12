@@ -1,6 +1,9 @@
 hostr
 =====
 
+[![Build Status](https://travis-ci.org/henrytseng/hostr.svg)](https://github.com/henrytseng/hostr)
+
+
 Great for testing quick HTML code.  
 
 A simple web server for the current working directory.  Used for hello world style web sites hosting only files in current directory structure.
