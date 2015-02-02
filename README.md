@@ -1,6 +1,8 @@
 hostr
 =====
 
+[![Join the chat at https://gitter.im/henrytseng/hostr](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/henrytseng/hostr?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/henrytseng/hostr.svg?branch=master)](https://github.com/henrytseng/hostr)
 
 
