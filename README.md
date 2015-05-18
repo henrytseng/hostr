@@ -22,8 +22,9 @@ Run the following
 	npm install hostr -g
 
 
+
 Use
----
+----
 
 Run the following command to host the current working directory
 
@@ -34,9 +35,10 @@ A simple web server will be hosted at
 
 	http://localhost:3000
 
-To host at a different port, set the PORT environment variable.  
+To host at a different port, set the PORT environment variable (For example, host on port 8080).  
 
 	PORT=8080 hostr
+
 
 
 LiveReload
