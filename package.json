@@ -1,6 +1,6 @@
 {
   "name": "hostr",
-  "version": "1.2.9",
+  "version": "2.0.9",
   "description": "A simple web server for the current working directory.  Used for hello world style web sites hosting only files in current directory structure.  Watches files and integrates with LiveReload.",
   "repository": {
     "type": "git",
@@ -8,6 +8,7 @@
   },
   "main": "./bin/hostr",
   "scripts": {
+    "watch": "mocha -w tests/*.spec.js",
     "test": "mocha tests/*.spec.js"
   },
   "bin": {
@@ -24,11 +25,9 @@
   ],
   "dependencies": {
     "argr": "~1.1.7",
-    "colors": "~1.0.3",
-    "express": "~4.10.4",
+    "colors": "^1.1.0",
     "lodash": "~2.4.1",
     "mocha": "~2.0.1",
-    "morgan": "~1.5.0",
     "tiny-lr": "~0.1.4"
   }
 }
