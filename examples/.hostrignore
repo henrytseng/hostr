@@ -1,0 +1,14 @@
+# Git
+.git
+
+# OSX
+.DS_Store
+
+# NPM
+npm-debug.log
+node_modules
+
+# Bower
+bower_components
+
+run                 # Run bash script

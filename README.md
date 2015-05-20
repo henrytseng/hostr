@@ -42,6 +42,21 @@ To host at a different port, set the PORT environment variable (For example, hos
 	hostr -p=8080
 
 
+Watch Changes
+-------------
+
+To disable watching (debugging only)
+
+	hostr -w=off
+
+To ignore files create a `.hostrignore` file in the current working directory using minimatch notation
+
+	file
+	directory/all/files/**/*
+	directory/*
+
+For more information check out [minimatch](https://www.npmjs.com/package/minimatch)
+
 
 LiveReload
 ----------
@@ -77,10 +92,6 @@ Cache
 To change cache expiration time (seconds, default: 60)
 
 	host -c=5
-
-To disable watching (debugging only)
-
-	hostr -w=off
 
 
 
