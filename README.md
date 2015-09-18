@@ -40,7 +40,7 @@ A simple web server will be hosted at
 To host at a different port, set the PORT environment variable (For example, host on port 8080).  
 
 ```sh
-hostr --port=8080  # or `-p 8080`
+hostr --port 8080
 ```
 
 
@@ -50,7 +50,7 @@ Watch Changes
 To disable watching (debugging only)
 
 ```sh
-hostr --watch=off  # or `-w off`
+hostr --watch off
 ```
 
 To ignore files create a `.hostrignore` file in the current working directory using minimatch notation
@@ -83,13 +83,13 @@ Then run hostr and when file changes are detected your browser will refresh.
 LiveReload port can be changed (default: 35729), to use port 32021
 
 ```sh
-hostr --livereload-port=32021  # or `-r 32021`
+hostr --livereload-port 32021
 ```
 
 To disable LiveReload
 
 ```sh
-hostr --livereload=off  # or `-l off`
+hostr --livereload off
 ```
 
 
@@ -100,7 +100,7 @@ Cache
 To change cache expiration time (seconds, default: 60)
 
 ```sh
-host --cache-expiration=5  # or `-c 5`
+host --cache-expiration 5
 ```
 
 
@@ -111,7 +111,7 @@ Quiet Mode
 To run quietly use 
 
 ```sh
-hostr --quiet  # or `-q`
+hostr --quiet
 ```
 
 And output will be suppressed
