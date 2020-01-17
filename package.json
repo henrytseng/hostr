@@ -25,13 +25,13 @@
     "simple server"
   ],
   "dependencies": {
-    "argr": "~1.1.7",
+    "argr": "^1.2.2",
     "colors": "^1.1.0",
-    "lodash": "^4.15.0",
+    "lodash": "^4.17.15",
     "minimatch": "^3.0.2",
     "tiny-lr": "~0.1.4"
   },
   "devDependencies": {
-    "mocha": "^2.5.3"
+    "mocha": "^3.5.3"
   }
 }
