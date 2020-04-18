@@ -1,6 +1,6 @@
 {
   "name": "hostr",
-  "version": "2.3.9",
+  "version": "2.3.10",
   "description": "A simple web server for the current working directory.  Used for hello world style web sites hosting only files in current directory structure.  Watches files and integrates with LiveReload.",
   "repository": {
     "type": "git",
@@ -28,11 +28,12 @@
     "argr": "^1.2.2",
     "colors": "^1.1.0",
     "lodash": "^4.17.15",
+    "mime-types": "^2.1.26",
     "minimatch": "^3.0.2",
     "tiny-lr": "~0.1.4"
   },
   "devDependencies": {
-    "yarn": "^1.21.1",
-    "mocha": "^3.5.3"
+    "mocha": "^3.5.3",
+    "yarn": "^1.21.1"
   }
 }
