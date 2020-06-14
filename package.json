@@ -30,10 +30,10 @@
     "lodash": "^4.17.15",
     "mime-types": "^2.1.26",
     "minimatch": "^3.0.2",
-    "tiny-lr": "~0.1.4"
+    "tiny-lr": "^1.1.1"
   },
   "devDependencies": {
-    "mocha": "^3.5.3",
+    "mocha": "^8.0.1",
     "yarn": "^1.21.1"
   }
 }
