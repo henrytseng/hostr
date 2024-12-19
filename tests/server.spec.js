@@ -1,6 +1,6 @@
 'use strict';
 
-var assert = require('assert');
+const assert = require('assert');
 
 describe('Server', function() {
   describe('#use', function() {
