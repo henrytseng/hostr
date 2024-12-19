@@ -1,6 +1,6 @@
 {
   "name": "hostr",
-  "version": "3.0.4444",
+  "version": "3.1.0",
   "description": "A simple web server for the current working directory.  Used for hello world style web sites hosting only files in current directory structure.  Watches files and integrates with LiveReload.",
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
   "bin": {
     "hostr": "./bin/hostr"
   },
-  "author": "Henry Tseng <contact@henrytseng.com> (http://www.henrytseng.com/)",
+  "author": "Engineering <engineering@heycanvas.com>",
   "license": "MIT",
   "keywords": [
     "http",
@@ -24,16 +24,18 @@
     "cli",
     "simple server"
   ],
+  "engines": {
+    "node": ">=22.12.0"
+  },  
   "dependencies": {
     "argr": "^1.2.2",
     "colors": "^1.1.0",
-    "lodash": "^4.17.21",
     "mime-types": "^2.1.26",
-    "minimatch": "^3.0.2",
+    "minimatch": "^10.0.1",
     "tiny-lr": "^1.1.1"
   },
   "devDependencies": {
-    "mocha": "^8.0.1",
+    "mocha": "^11.0.1",
     "yarn": "^1.21.1"
   }
 }
