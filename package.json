@@ -29,7 +29,6 @@
   },  
   "dependencies": {
     "argr": "^1.2.2",
-    "colors": "^1.1.0",
     "mime-types": "^2.1.26",
     "minimatch": "^10.0.1",
     "tiny-lr": "^1.1.1"
