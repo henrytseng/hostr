@@ -1,12 +1,11 @@
 'use strict';
 
-const assert = require('assert');
+import { strict as assert } from 'node:assert';
+import Router from '../lib/router.js';
 
 describe('Router', () => {
   describe('#match', () => {
     it('Should match routes exactly with same String routes', (done) => {
-      const Router = require('../lib/router');
-
       assert.ok(Router('/').match({
         url: '/'
       }));
@@ -27,8 +26,6 @@ describe('Router', () => {
     });
 
     it('Should not match routes without same String routes', (done) => {
-      const Router = require('../lib/router');
-
       assert.ok(!Router('/foo/bar/1').match({
         url: '/foo/bar/2'
       }));
@@ -45,8 +42,6 @@ describe('Router', () => {
     });
 
     it('Should match with variables', (done) => {
-      const Router = require('../lib/router');
-
       assert.ok(Router('/foo/bar').match({
         url: '/foo/bar'
       }));

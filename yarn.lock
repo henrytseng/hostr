@@ -42,10 +42,10 @@ argparse@^2.0.1:
   resolved "https://registry.npmjs.org/argparse/-/argparse-2.0.1.tgz"
   integrity sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==
 
-argr@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/argr/-/argr-2.0.0.tgz"
-  integrity sha512-+2x5UcN1WalaK6ZkR8ZwGDTMFtnLeHHrCucKs5w6BQhtsLIXzh8kklbfgawnz+kLxAT5nxvSpNpWbol6kK4noA==
+argr@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/argr/-/argr-2.0.1.tgz"
+  integrity sha512-mNhukYY9igJzL6sKwv/TD8gJTb6qLBOU3tiey3rM7qHlvBq3NbSDnU6mhM2yXZT2eV+QK6sdxBRUy10g/0Ssug==
 
 balanced-match@^1.0.0:
   version "1.0.0"

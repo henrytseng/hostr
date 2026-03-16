@@ -1,12 +1,11 @@
 'use strict';
 
-const assert = require('assert');
+import { strict as assert } from 'node:assert';
+import Server from '../lib/server.js';
 
 describe('Server', () => {
   describe('#use', () => {
     it('Should add middleware with handle', (done) => {
-      const Server = require('../lib/server');
-
       const server = Server();
       server.use('/', (req, res, next) => {
         next();
@@ -20,8 +19,6 @@ describe('Server', () => {
 
   describe('#handle', () => {
     it('Should handle a request according to the middleware added', (done) => {
-      const Server = require('../lib/server');
-
       const server = Server();
       let first = 0;
       let second = 0;

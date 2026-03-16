@@ -1,6 +1,7 @@
 {
   "name": "hostr",
-  "version": "4.0.2",
+  "version": "4.0.3",
+  "type": "module",
   "description": "A simple web server for the current working directory.  Used for hello world style web sites hosting only files in current directory structure.  Watches files and integrates with LiveReload.",
   "repository": {
     "type": "git",
