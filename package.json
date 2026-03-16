@@ -28,7 +28,7 @@
     "simple server"
   ],
   "dependencies": {
-    "argr": "^2.0.0",
+    "argr": "^2.0.1",
     "colors": "^1.1.0",
     "mime-types": "^2.1.26",
     "minimatch": "^3.0.2",
