@@ -1,11 +1,11 @@
 'use strict';
 
-var assert = require('assert');
+const assert = require('assert');
 
-describe('Router', function() {
-  describe('#match', function() {
-    it('Should match routes exactly with same String routes', function(done) {
-      var Router = require('../lib/router');
+describe('Router', () => {
+  describe('#match', () => {
+    it('Should match routes exactly with same String routes', (done) => {
+      const Router = require('../lib/router');
 
       assert.ok(Router('/').match({
         url: '/'
@@ -26,8 +26,8 @@ describe('Router', function() {
       done();
     });
 
-    it('Should not match routes without same String routes', function(done) {
-      var Router = require('../lib/router');
+    it('Should not match routes without same String routes', (done) => {
+      const Router = require('../lib/router');
 
       assert.ok(!Router('/foo/bar/1').match({
         url: '/foo/bar/2'
@@ -44,8 +44,8 @@ describe('Router', function() {
       done();
     });
 
-    it('Should match with variables', function(done) {
-      var Router = require('../lib/router');
+    it('Should match with variables', (done) => {
+      const Router = require('../lib/router');
 
       assert.ok(Router('/foo/bar').match({
         url: '/foo/bar'

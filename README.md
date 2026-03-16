@@ -104,6 +104,6 @@ If you've got ideas on how to make hostr better create an issue and mark an enha
 
 ## License
 
-Copyright (c) 2014 Henry Tseng
+Copyright (c) 2026 Henry Tseng
 
 Released under the MIT license. See LICENSE for details.
